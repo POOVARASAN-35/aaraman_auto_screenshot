@@ -328,7 +328,7 @@ def extraction_worker(
             if is_folder:
                 log_task(task_id, "Folder link detected. Fetching folder structure...")
                 update_task(task_id, progress_detail="Downloading folder from Drive...")
-                gdown.download_folder(url=video_path, output=unique_dir, quiet=True, remaining_ok=True)
+                gdown.download_folder(url=video_path, output=unique_dir, quiet=True)
                 
                 video_extensions = ('.mp4', '.mov', '.avi', '.mkv', '.webm')
                 video_files = []
@@ -357,7 +357,7 @@ def extraction_worker(
                     if re.match(r'^[a-zA-Z0-9_-]{25,50}$', video_path):
                         log_task(task_id, "File download failed. Retrying treating ID as a folder...")
                         folder_url = f"https://drive.google.com/drive/folders/{video_path}"
-                        gdown.download_folder(url=folder_url, output=unique_dir, quiet=True, remaining_ok=True)
+                        gdown.download_folder(url=folder_url, output=unique_dir, quiet=True)
                         video_extensions = ('.mp4', '.mov', '.avi', '.mkv', '.webm')
                         video_files = []
                         for root, dirs, files in os.walk(unique_dir):
