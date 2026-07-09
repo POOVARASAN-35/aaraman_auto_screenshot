@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local database/temporary files
+temp_downloads/
+static/previews/
+
+# Massive video files (do not push to git)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Slide extraction output folder (contains PNG screenshots)
+Output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
