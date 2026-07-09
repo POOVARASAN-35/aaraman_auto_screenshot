@@ -347,7 +347,7 @@ def extraction_worker(
                 direct_url = clean_gdrive_url(video_path)
                 update_task(task_id, progress_detail="Downloading file from Drive...")
                 output_target = unique_dir + os.sep
-                downloaded_path = gdown.download(url=direct_url, output=output_target, quiet=True, fuzzy=True)
+                downloaded_path = gdown.download(url=direct_url, output=output_target, quiet=True)
                 
                 if downloaded_path and os.path.exists(downloaded_path):
                     downloaded_video_path = downloaded_path
